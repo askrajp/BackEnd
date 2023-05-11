@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.miporftolio.ArgProg.ArgProgApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.021 s - in com.miporftolio.ArgProg.ArgProgApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.513 s - in com.miporftolio.ArgProg.ArgProgApplicationTests
