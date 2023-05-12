@@ -20,6 +20,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+             .cors().and()
             .authorizeHttpRequests((authorize) -> authorize
                 .anyRequest().permitAll()
             )

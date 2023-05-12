@@ -11,9 +11,7 @@ import com.miporftolio.ArgProg.util.JwtUtil;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @RestController
 @RequestMapping("/api/user")
