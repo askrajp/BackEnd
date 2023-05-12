@@ -26,8 +26,7 @@ public class SecurityConfiguration {
             )
             .csrf().disable()
             .httpBasic().disable()
-            .formLogin().disable()
-            .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-        return http.build();
+            .formLogin().disable();
+              return http.build();
     }
 }
