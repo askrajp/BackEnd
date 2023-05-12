@@ -2,16 +2,22 @@ package com.miporftolio.ArgProg.service;
 
 import com.miporftolio.ArgProg.model.UserProfile;
 import com.miporftolio.ArgProg.repository.UserProfileRepository;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Service
 public class UserProfileService {
 
     @Autowired
     private UserProfileRepository userProfileRepository;
+    
+  
 
     public Optional<UserProfile> findByEmail(String email) {
         return Optional.ofNullable(userProfileRepository.findByEmail(email));
@@ -47,5 +53,19 @@ public class UserProfileService {
     public Optional<UserProfile> findById(Long id) {
     return userProfileRepository.findById(id);
 }
-    
+     public UserDetails loadUserByEmail(String email) {
+        UserProfile userProfile = userProfileRepository.findByEmail(email);
+        if (userProfile == null) {
+            throw new UsernameNotFoundException("User not found with email: " + email);
+        }
+
+        return User.withUsername(userProfile.getEmail())
+                .password(userProfile.getPassword())
+                .authorities(new ArrayList<>())
+                .accountExpired(false)
+                .accountLocked(false)
+                .credentialsExpired(false)
+                .disabled(false)
+                .build();
+    }
 }

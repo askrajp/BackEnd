@@ -8,6 +8,8 @@ com\miporftolio\ArgProg\controller\SkillController.class
 com\miporftolio\ArgProg\model\Project.class
 com\miporftolio\ArgProg\model\Skill.class
 com\miporftolio\ArgProg\service\SkillService.class
+com\miporftolio\ArgProg\util\JwtUtil.class
+com\miporftolio\ArgProg\filters\JwtRequestFilter.class
 com\miporftolio\ArgProg\service\ProjectService.class
 com\miporftolio\ArgProg\ArgProgApplication.class
 com\miporftolio\ArgProg\model\UserProfile.class

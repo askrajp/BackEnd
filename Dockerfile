@@ -1,6 +1,4 @@
-FROM amazoncorretto:17
-
-LABEL maintainer="askrajpr"
+FROM amazoncorretto:17-alpine-jdk
 
 COPY target/ArgProg-0.0.1-SNAPSHOT.jar ArgProg-0.0.1-SNAPSHOT.jar
 
