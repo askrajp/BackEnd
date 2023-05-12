@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+@CrossOrigin(origins = "https://askra-portfolio.web.app/")
 @RestController
 @RequestMapping("/api/user")
 public class UserProfileController {
