@@ -1,5 +1,6 @@
 package com.miporftolio.ArgProg.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +21,9 @@ public class UserProfile {
     private String occupation;
     private String residence;
     private boolean mobilityAvailability;
+    @Column(columnDefinition = "TEXT")
     private String description;
+
 
    
     public UserProfile() {
