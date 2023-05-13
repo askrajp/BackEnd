@@ -16,8 +16,7 @@ public class SecurityConfiguration {
         http
             .cors().and() 
             .authorizeHttpRequests((authorize) -> authorize
-                .requestMatchers("/api/user/login").authenticated() // 
-                .anyRequest().permitAll() //
+                .anyRequest().permitAll() 
             )
             .csrf().disable()
             .httpBasic().disable()
@@ -25,4 +24,5 @@ public class SecurityConfiguration {
         return http.build();
     }
 }
+
 
