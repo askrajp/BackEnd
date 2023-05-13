@@ -26,10 +26,14 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-            throws ServletException, IOException {
+  @Override
+protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+        throws ServletException, IOException {
 
+    String requestURI = request.getRequestURI();
+
+    // Solo procesar el endpoint de inicio de sesión
+    if (requestURI.contains("/api/user/login")) {
         final String authorizationHeader = request.getHeader("Authorization");
 
         String email = null;
@@ -50,6 +54,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             }
         }
-        chain.doFilter(request, response);
     }
+
+    chain.doFilter(request, response);
+}
+
 }
