@@ -76,4 +76,4 @@ For detailed documentation, visit `http://localhost:8080/swagger-ui.html`.
 Contributions are welcome! If you have ideas for new features or improvements, feel free to fork the repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+No license what-so-ever, feel free to use as a baseline and improve at your wish.
